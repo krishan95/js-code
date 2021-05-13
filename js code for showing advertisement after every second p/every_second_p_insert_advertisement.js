@@ -3,7 +3,7 @@ function insert_ads_every_second_p( $content ) {
     $paragraphs = explode( $closing_p, $content );
     foreach ($paragraphs as $index => $paragraph) {
         $paragraphs[$index] .= $closing_p;
-        if ( in_array($index, array(1, 5, 9)) ) {
+        if ( $index % 2 != 0 ) {
             // ad code goes here
             $paragraphs[$index] .= '<p style="background:#f00">Ad goes here</p>';
         }
